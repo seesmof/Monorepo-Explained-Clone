@@ -1,7 +1,7 @@
-import Header from "@/components/Header";
-import HeroSection from "@/components/Hero";
-import UndersatingSection from "@/components/Understanding";
-import WhatIsSection from "@/components/WhatIs";
+import Header from "@/components/sections/Header";
+import HeroSection from "@/components/sections/Hero";
+import UndersatingSection from "@/components/sections/Understanding";
+import WhatSection from "@/components/sections/What";
 
 export default function HomePage() {
   return (
@@ -9,7 +9,7 @@ export default function HomePage() {
       <Header />
       <HeroSection />
       <UndersatingSection />
-      <WhatIsSection />
+      <WhatSection />
     </>
   );
 }

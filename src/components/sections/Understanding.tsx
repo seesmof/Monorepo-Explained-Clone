@@ -1,6 +1,5 @@
 import Link from "next/link";
-
-export const TEXT_EMPHASIS_CLASSES = "not-italic bg-yellow-500 rounded p-1";
+import EmphasisedText from "../small/EmphasisedText";
 
 const MonoLogo = () => {
   return (
@@ -61,19 +60,17 @@ export default function UndersatingSection() {
       <h2 className="font-extrabold text-3xl">Understanding Monorepos</h2>
       <p className="text-xl text-stone-700">
         Monorepos are gaining renewed importance as{" "}
-        <em className={TEXT_EMPHASIS_CLASSES}>AI agents</em> reshape how
-        developers work. Repository boundaries create friction that agents
-        amplify: context loss across repos, duplicated setup, manual
-        coordination of{" "}
-        <em className={TEXT_EMPHASIS_CLASSES}>cross-cutting changes</em>.
-        Understanding monorepos (and how to set them up right) is becoming a
-        core skill.
+        <EmphasisedText>AI agents</EmphasisedText> reshape how developers work.
+        Repository boundaries create friction that agents amplify: context loss
+        across repos, duplicated setup, manual coordination of{" "}
+        <EmphasisedText>cross-cutting changes</EmphasisedText>. Understanding
+        monorepos (and how to set them up right) is becoming a core skill.
       </p>
       <p className="text-xl text-stone-700">
         We created this resource to help developers{" "}
-        <em className={TEXT_EMPHASIS_CLASSES}>understand what monorepos are</em>
-        , what benefits they bring, and what to look for in{" "}
-        <em className={TEXT_EMPHASIS_CLASSES}>monorepo tooling</em>.
+        <EmphasisedText>understand what monorepos are</EmphasisedText>, what
+        benefits they bring, and what to look for in{" "}
+        <EmphasisedText>monorepo tooling</EmphasisedText>.
       </p>
       <MonoLogo />
       <div className="grid grid-cols-2 gap-3 mt-24">
