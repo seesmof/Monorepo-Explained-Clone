@@ -38,8 +38,8 @@ export default function Header() {
   };
 
   return (
-    <>
-      <header className="flex justify-between items-center p-2 px-4 border-b border-stone-100 bg-white/90 top-0 sticky">
+    <div className="top-0 sticky">
+      <header className="flex justify-between items-center p-2 px-4 border-b border-stone-100 bg-white/90">
         <Link href={"/"}>
           <span className="font-bold">monorepo</span>
           <span className="text-yellow-600">.tools</span>
@@ -63,6 +63,6 @@ export default function Header() {
           ))}
         </div>
       ) : null}
-    </>
+    </div>
   );
 }
