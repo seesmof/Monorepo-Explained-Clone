@@ -1,6 +1,7 @@
 import Image from "next/image";
 import EmphasisedText from "../small/EmphasisedText";
 import Paragraph from "../small/Paragraph";
+import Link from "next/link";
 
 export default function WhatSection() {
   return (
@@ -55,6 +56,21 @@ export default function WhatSection() {
           className="mx-auto"
         />
       </article>
+
+      <div className="bg-slate-100 rounded-lg shadow-xl text-center p-12">
+        <h3 className="text-3xl font-extrabold">✋ Monorepo ≠ Monolith</h3>
+        <p className="text-lg mt-5">
+          A good monorepo is the opposite of monolithic! Read more about this
+          and other misconceptions in the article on{" "}
+          <Link
+            href="/blog/monorepo-is-not-monolith"
+            className="underline underline-offset-4 decoration-yellow-300 hover:no-underline hover:bg-yellow-500 hover:rounded"
+          >
+            “Misconceptions about Monorepos: Monorepo != Monolith”
+          </Link>
+          .
+        </p>
+      </div>
     </div>
   );
 }

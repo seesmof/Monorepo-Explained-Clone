@@ -39,7 +39,7 @@ const Button = ({ href, title }: ButtonProps) => {
   return (
     <Link
       href={href}
-      className="bg-slate-100 text-left p-3 font-bold text-sm shadow rounded justify-between"
+      className="bg-slate-100 hover:bg-yellow-500 text-left p-3 font-bold text-sm shadow rounded"
     >
       {title}
     </Link>
