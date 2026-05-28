@@ -66,13 +66,17 @@ const Pro = ({ category, title, description }: Pro) => {
         className={`rounded-full p-1 mt-1 h-min animate-pulse ${category === "polyrepo" ? "bg-red-400" : "bg-green-400"}`}
       ></div>
 
-      <div className="flex flex-col">
+      <div className="flex flex-col group">
         <p
           className={`${category === "polyrepo" ? "text-red-400" : "text-green-400"} font-semibold uppercase tracking-tighter text-sm`}
         >
           {category}
         </p>
         <strong className="font-semibold text-slate-700">{title}</strong>
+
+        <div className="group-hover:block -ml-8 mt-3 p-3 hidden bg-white rounded-md outline outline-slate-200">
+          {description}
+        </div>
       </div>
     </div>
   );
