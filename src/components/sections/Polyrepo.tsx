@@ -104,12 +104,17 @@ const Point = ({ id, title, monoDescription, polyDescription }: PointProps) => {
         <h4 className="font-semibold text-xl">{title}</h4>
       </div>
       <div
-        className={`border rounded px-4 py-6 my-4 ${monorepo ? "bg-green-50 border-green-200/60" : "bg-slate-50 border-slate-300"}`}
+        className={`border rounded px-4 py-6 my-4 cursor-pointer hover:shadow-xl hover:-translate-y-1 transition-all ${monorepo ? "bg-green-50 border-green-200/60" : "bg-slate-50 border-slate-300"}`}
+        onClick={() => setMonorepo((monorepo) => !monorepo)}
       >
-        <h4 className="uppercase font-bold">
+        <h4
+          className={`uppercase text-sm font-bold ${monorepo ? "text-green-400" : "text-slate-400"}`}
+        >
           {monorepo ? "monorepo" : "polyrepo"}
         </h4>
-        <p>{monorepo ? monoDescription : polyDescription}</p>
+        <p className="mt-3 text-sm">
+          {monorepo ? monoDescription : polyDescription}
+        </p>
       </div>
     </div>
   );
@@ -154,7 +159,7 @@ export default function PolyrepoSection() {
   return (
     <div className="px-4 mt-24">
       <header>
-        <h2 className="font-extrabold text-4xl text-center">
+        <h2 id="poly" className="font-extrabold text-4xl text-center">
           <em>#</em> The Polyrepo Tax
         </h2>
         <p className="text-lg text-center mt-2 text-stone-700">
