@@ -155,6 +155,26 @@ const points: PointProps[] = [
   },
 ];
 
+const VericalArrow = ({ className }: { className?: string }) => {
+  return (
+    <svg
+      width="24"
+      height="48"
+      viewBox="0 0 24 48"
+      fill="none"
+      className={`text-slate-300 ${className}`}
+    >
+      <path
+        d="M12 0v40m0 0l-8-8m8 8l8-8"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      ></path>
+    </svg>
+  );
+};
+
 export default function PolyrepoSection() {
   return (
     <div className="px-4 mt-24">
@@ -222,8 +242,25 @@ export default function PolyrepoSection() {
 
         <div className="grid grid-cols-1 px-4 mt-8">
           {points.map((point, index) => (
-            <Point {...point} key={index} />
+            <div key={index}>
+              <Point {...point} />
+              <VericalArrow className="mx-auto" />
+            </div>
           ))}
+          <div className="bg-white outline outline-slate-300 text-slate-700 p-7 text-center rounded text-lg">
+            Full visibility, autonomously discoverable context, and instant
+            feedback loops: the ingredients to leverage AI agents to their
+            fullest.
+          </div>
+          <VericalArrow className="mx-auto mt-2" />
+          <iframe
+            src="https://www.youtube.com/embed/alIto5fqrfk"
+            title="Клод Код у Монорепо проти Полірепо"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            className="w-full h-72"
+          ></iframe>
         </div>
       </article>
     </div>
