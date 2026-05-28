@@ -74,7 +74,7 @@ const Pro = ({ category, title, description }: Pro) => {
         </p>
         <strong className="font-semibold text-slate-700">{title}</strong>
 
-        <div className="group-hover:block -ml-8 mt-3 p-3 hidden bg-white rounded-md outline outline-slate-200">
+        <div className="group-hover:block hidden -ml-8 mt-3 p-3 bg-white rounded-md outline outline-slate-200">
           {description}
         </div>
       </div>
@@ -123,6 +123,17 @@ export default function PolyrepoSection() {
           {prosData.map((pro, index) => (
             <Pro {...pro} key={index} />
           ))}
+        </div>
+
+        <div className="bg-slate-100 rounded-lg shadow-xl text-center pt-14 pb-10 px-12 mt-12">
+          <h3 className="font-extrabold text-3xl">
+            The Polyrepo Tax gets worse with AI
+          </h3>
+          <Paragraph className="mt-4">
+            Repo boundaries act as walls for both humans and AI assistants. An
+            AI agent cannot see beyond the repo boundary and has to rely on
+            specs and docs rather than the actual implementation.
+          </Paragraph>
         </div>
       </article>
     </div>

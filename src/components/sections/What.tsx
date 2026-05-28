@@ -7,7 +7,7 @@ export default function WhatSection() {
   return (
     <div className="px-4 mt-24">
       <header>
-        <h2 className="font-extrabold text-4xl text-center">
+        <h2 id="mono" className="font-extrabold text-4xl text-center">
           <em>#</em> What is a Monorepo?
         </h2>
         <p className="text-lg text-center mt-2 text-stone-700">
