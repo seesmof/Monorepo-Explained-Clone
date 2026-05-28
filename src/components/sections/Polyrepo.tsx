@@ -1,13 +1,16 @@
+"use client";
+
 import Image from "next/image";
 import Paragraph from "../small/Paragraph";
+import { useState } from "react";
 
-interface Pro {
+interface ProProps {
   category: "monorepo" | "polyrepo";
   title: string;
   description: string;
 }
 
-const prosData: Pro[] = [
+const prosData: ProProps[] = [
   {
     category: "polyrepo",
     title: "Cumbersome code sharing",
@@ -58,7 +61,7 @@ const prosData: Pro[] = [
   },
 ];
 
-const Pro = ({ category, title, description }: Pro) => {
+const Pro = ({ category, title, description }: ProProps) => {
   return (
     <div className="flex flex-row gap-4">
       {/* Pulsing Circle */}
@@ -81,6 +84,71 @@ const Pro = ({ category, title, description }: Pro) => {
     </div>
   );
 };
+
+interface PointProps {
+  id: string;
+  title: string;
+  monoDescription: string;
+  polyDescription: string;
+}
+
+const Point = ({ id, title, monoDescription, polyDescription }: PointProps) => {
+  const [monorepo, setMonorepo] = useState<boolean>(true);
+
+  return (
+    <div className="group">
+      <div className="flex flex-row items-center gap-3">
+        <div className="uppercase font-extrabold text-slate-200 text-5xl group-hover:text-yellow-500 transition-colors">
+          {id}
+        </div>
+        <h4 className="font-semibold text-xl">{title}</h4>
+      </div>
+      <div
+        className={`border rounded px-4 py-6 my-4 ${monorepo ? "bg-green-50 border-green-200/60" : "bg-slate-50 border-slate-300"}`}
+      >
+        <h4 className="uppercase font-bold">
+          {monorepo ? "monorepo" : "polyrepo"}
+        </h4>
+        <p>{monorepo ? monoDescription : polyDescription}</p>
+      </div>
+    </div>
+  );
+};
+
+const points: PointProps[] = [
+  {
+    id: "01",
+    title: "Full visibility",
+    monoDescription:
+      "The agent reads the actual implementation: real API handlers, real data types, real shared libraries. Plans are higher quality because they are based on the code itself.",
+    polyDescription:
+      "An AI agent can only see the code inside the current repository. Everything beyond that boundary has to come from documentation, published type definitions, or manual explanations that may be incomplete or out of date.",
+  },
+  {
+    id: "02",
+    title: "Context flows freely",
+    monoDescription:
+      "No walls between projects. The agent navigates from frontend to backend to shared libraries directly. Context is discovered, not transferred. No manual handoff needed.",
+    polyDescription:
+      "When work spans multiple repos, the human becomes the bridge. You describe the API shape, point the agent to docs, explain what the other service expects. Context gets lost at every repo boundary.",
+  },
+  {
+    id: "03",
+    title: "Cross-cutting work",
+    monoDescription:
+      "The agent has full access to apply changes across projects, run affected tests, and submit a consistent, atomic PR. Visibility and context make this possible, and so do quick, immediate feedback loops.",
+    polyDescription:
+      "Refactoring, migrations, dependency upgrades: the tedious, error-prone work that teams keep postponing. AI agents are perfect for it, but repo boundaries limit what they can see and change. Cross-repo changes stay manual, slow, and fragile.",
+  },
+  {
+    id: "04",
+    title: "Instant feedback loops",
+    monoDescription:
+      "Change the backend and frontend tests break immediately. The agent knows why, because it made the change. It proposes a fix: update the frontend or make the API non-breaking. The whole loop happens in one session, with full context.",
+    polyDescription:
+      "Breaking changes surface late. You publish to staging, wait for the downstream repo to update, and discover the failure in a new session with no context of what changed or why. The feedback cycle is slow and disconnected.",
+  },
+];
 
 export default function PolyrepoSection() {
   return (
@@ -134,6 +202,23 @@ export default function PolyrepoSection() {
             AI agent cannot see beyond the repo boundary and has to rely on
             specs and docs rather than the actual implementation.
           </Paragraph>
+        </div>
+      </article>
+
+      <article className="mt-12">
+        <div className="text-center">
+          <h3 className="text-3xl font-extrabold">
+            Monorepos Amplify AI Agents
+          </h3>
+          <Paragraph className="mt-2">
+            The path to fully leveraging AI agent capabilities.
+          </Paragraph>
+        </div>
+
+        <div className="grid grid-cols-1 px-4 mt-8">
+          {points.map((point, index) => (
+            <Point {...point} key={index} />
+          ))}
         </div>
       </article>
     </div>
