@@ -1,6 +1,7 @@
 import Header from "@/components/sections/Header";
 import HeroSection from "@/components/sections/Hero";
 import PolyrepoSection from "@/components/sections/Polyrepo";
+import ProvidesSection from "@/components/sections/Provides";
 import SyntheticSection from "@/components/sections/Synthetic";
 import UndersatingSection from "@/components/sections/Understanding";
 import WhatSection from "@/components/sections/What";
@@ -14,6 +15,7 @@ export default function HomePage() {
       <WhatSection />
       <PolyrepoSection />
       <SyntheticSection />
+      <ProvidesSection />
     </div>
   );
 }

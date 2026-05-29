@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Paragraph from "../small/Paragraph";
 import EmphasisedText from "../small/EmphasisedText";
 import Link from "next/link";
@@ -37,9 +36,10 @@ export default function SyntheticSection() {
           className="mt-3 block underline underline-offset-4 decoration-yellow-500 hover:bg-yellow-500 hover:rounded w-fit duration-150 transition-all"
           href={"/synthetic-monorepos"}
         >
-          Read the deep dive
+          Read the deep dive →
         </Link>
       </article>
+
       <blockquote className="font-bold italic border-l-4 border-yellow-500 pl-5 text-lg">
         A synthetic monorepo doesn’t tear down the walls between repos. It
         creates tunnels through them, giving humans and AI agents the visibility
