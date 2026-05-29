@@ -259,7 +259,7 @@ export default function PolyrepoSection() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
-            className="w-full h-72"
+            className="w-full h-80"
           ></iframe>
         </div>
       </article>
